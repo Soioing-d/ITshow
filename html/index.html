@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Philosophy</title>
+	<link rel="icon" href="../images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	<link href="https://fonts.googleapis.com/css?family=Cantata+One|Noto+Serif+KR:300,400,700|Noto+Sans+KR|Playfair+Display&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		
+	$(function () {
+	/*info2*/
+		$('.theory01').mouseenter(function(){
+			$('.hover01').show();
+		});
+		$('.hover01').mouseleave(function(){
+			$('.hover01').hide();
+		});
+
+		$('.theory02').mouseenter(function(){
+			$('.hover02').show();
+		});
+		$('.hover02').mouseleave(function(){
+			$('.hover02').hide();
+		});
+
+		$('.theory03').mouseenter(function(){
+			$('.hover03').show();
+		});
+		$('.hover03').mouseleave(function(){
+			$('.hover03').hide();
+		});
+
+		$('.theory04').mouseenter(function(){
+			$('.hover04').show();
+		});
+		$('.hover04').mouseleave(function(){
+			$('.hover04').hide();
+		});
+	/*아코디언 메뉴*/
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].addEventListener("click", function() {
+		    /* Toggle between adding and removing the "active" class,
+		    to highlight the button that controls the panel */
+		    this.classList.toggle("active");
+			 /* Toggle between hiding and showing the active panel */
+		    var panel = this.nextElementSibling;
+		    if (panel.style.display === "block") {
+		      panel.style.display = "none";
+		    } else {
+		      panel.style.display = "block";
+		    }
+		    if (panel.style.maxHeight){
+		      panel.style.maxHeight = null;
+		    } else {
+		      panel.style.maxHeight = panel.scrollHeight + "px";
+		    } 
+		  });
+		};
+		$('.bicAccor').mouseenter(function(){
+			$('.accordion').addClass('active');
+		});
+	/*메뉴탭*/
+		$('.nav_inner .m1').on('click', function(){
+			var pos=$('#start_wrap').offset().top+0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+
+		$('.nav_inner .m2').on('click', function(){
+			var pos=$('#info_wrap1').offset().top-10;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+		$('#start_wrap .title').on('click', function(){
+			var pos=$('#info_wrap1').offset().top-10;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+
+		$('#info_wrap1 .next').on('click', function(){
+			var pos=$('#info_wrap2').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+
+		$('.nav_inner .m3').on('click', function(){
+			var pos=$('#who_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+		$('#info_wrap2 .next').on('click', function(){
+			var pos=$('#who_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+
+		$('.nav_inner .m4').on('click', function(){
+			var pos=$('#history_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+		$('#who_wrap .next').on('click', function(){
+			var pos=$('#history_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+
+		$('.nav_inner .m5').on('click', function(){
+			var pos=$('#sayed_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+		$('#history_wrap .hist_next').on('click', function(){
+			var pos=$('#sayed_wrap').offset().top-0;
+			$('html,body').animate({
+				'scrollTop':pos
+			}, 800);
+		});
+	/*모달 팝업*/
+		$(".modalPopup_01").hide();
+	    $("#whoHover01").click(function () {
+	      $(".modalPopup_01").show();
+	    });
+
+	    $(".close").click(function () {
+	      $(".modalPopup_01").hide();
+	    });
+
+	    $(".modalPopup_02").hide();
+	    $("#whoHover02").click(function () {
+	      $(".modalPopup_02").show();
+	    });
+
+	    $(".close").click(function () {
+	      $(".modalPopup_02").hide();
+	    });
+
+	    $(".modalPopup_03").hide();
+	    $("#whoHover03").click(function () {
+	      $(".modalPopup_03").show();
+	    });
+
+	    $(".close").click(function () {
+	      $(".modalPopup_03").hide();
+	    });
+	/*철학자 마우스오버*/
+		$('.whover').hide();
+		$('.who1').mouseenter(function(){
+			$('#whoHover01').show();
+		});
+		$('#whoHover01').mouseleave(function(){
+			$('#whoHover01').hide();
+		});
+
+		$('.who2').mouseenter(function(){
+			$('#whoHover02').show();
+		});
+		$('#whoHover02').mouseleave(function(){
+			$('#whoHover02').hide();
+		});
+
+		$('.who3').mouseenter(function(){
+			$('#whoHover03').show();
+		});
+		$('#whoHover03').mouseleave(function(){
+			$('#whoHover03').hide();
+		});
+	/*철학사 틀 고정*/
+		$(window).on('scroll',function(){
+			if($(this).scrollTop()>4260){
+				$('.paper').css('position','fixed');
+			}
+			if($(this).scrollTop()<4260){
+				$('.paper').css('position','absolute');
+			}
+			if($(this).scrollTop()>15000){
+				$('.paper').css('position','absolute');
+			}
+
+			if($(this).scrollTop()>4260){
+				$('.hist_next').css('position','fixed');
+			}
+			if($(this).scrollTop()<4260){
+				$('.hist_next').css('position','absolute');
+			}
+			if($(this).scrollTop()>15000){
+				$('.hist_next').css('position','absolute');
+			}
+		});
+		$('.pin01').hide();
+		$('#sayHo1').mouseenter(function(){
+			$('.pin01').show();
+		});
+		$('#sayHo1').mouseleave(function(){
+			$('.pin01').hide();
+		});
+
+		$('.pin02').hide();
+		$('#sayHo2').mouseenter(function(){
+			$('.pin02').show();
+		});
+		$('#sayHo2').mouseleave(function(){
+			$('.pin02').hide();
+		});
+
+		$('.pin03').hide();
+		$('#sayHo3').mouseenter(function(){
+			$('.pin03').show();
+		});
+		$('#sayHo3').mouseleave(function(){
+			$('.pin03').hide();
+		});
+		$('.panel').mouseenter(function(){
+			$('.pin03').hide();
+		});
+	});
+	</script>
+</head>
+<body>
+
+	<div id="nav_container">
+		<div class="nav_inner">
+			<ul>
+				<li><a href="#" class="m1">start</a></li>
+				<li><a href="#" class="m2">info</a></li>
+				<li><a href="#" class="m3">who</a></li>
+				<li><a href="#" class="m4">history</a></li>
+				<li><a href="#" class="m5">sayed</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="start_wrap">
+		<div class="circle"></div>
+		<img src="../images/main_02.png" class="Qmark">
+		<span class="title"><a href="#">Philosophy</a></span>
+		<img src="../images/main_01.jpg" class="mainBg">
+	</div>
+
+	<div id="info_wrap1">
+		<img src="../images/infoBg_01.jpg" class="infoBg1">
+		<div class="info1_inner">
+			<h1>Philosophy</h1>
+			<p>인간은 왜 살아가는지, 선과 악을 가르는 기준이 무엇인지, 우리가 사는 이 세상이 과연 실재하는지, 생각해 본 적 있나요?<br>
+			이렇게 당연하게 여겨지는 진리에 질문을 던지고 회의를 배울 때 철학은 시작됩니다.<br><br>‘지혜를 사랑하다’는 의미인 고대 희랍어 ‘필로소피아’에서 시작한 철학은 우리 인간과 그를 둘러싼 세계에 대한 본질을<br>탐구하는 학문입니다. 가장 단순하고 당연한 사실, 개념에 끈질기게 질문을 던집니다. 모두가 믿고 있는 사실이 진실인지<br>
+			의심할 때부터 철학은 시작됩니다. 일상생활의 모든 것이 궁금하고 끊임없이 호기심이 생긴다면 누구나 철학자가 될 수<br>
+			있습니다.  다만 진정한 철학자가 되기 위해서는 질문을 던지는 것에서 끝내지 않고 의심과 근거를 바탕으로 추론하여<br>
+			자신만의 결론을 도출해야 합니다. 역대 철학자들이 남긴 질문의 해답을 찾기 위한 여정은 현재에도 이루어지고 있습니다.<br>
+			나만의 철학을 만들어 나가는 삶의 즐거움을 찾아보세요.</p>
+			<img src="../images/ico_next.png" class="next">
+		</div>
+	</div>
+
+	<div id="info_wrap2">
+		<img src="../images/infoBg_02.jpg" class="infoBg2">
+
+		<div class="theory01"><img src="../images/theory_01.png"></div>
+		<div class="theory02"><img src="../images/theory_02.png"></div>
+		<div class="theory03"><img src="../images/theory_03.png"></div>
+		<div class="theory04"><img src="../images/theory_04.png"></div>
+
+		<div class="hover01"><img src="../images/theory_hover_01.png"></div>
+		<div class="hover02"><img src="../images/theory_hover_02.png"></div>
+		<div class="hover03"><img src="../images/theory_hover_03.png"></div>
+		<div class="hover04"><img src="../images/theory_hover_04.png"></div>
+
+		<img src="../images/info_next.png" class="next">
+	</div>
+
+	<div id="who_wrap">
+		<img src="../images/philosopher_title.jpg" class="title">
+		<img src="../images/background.jpg" class="whoBg">
+		<div class="plaster">
+			<div class="who_img">
+				<img src="../images/philosopher_01.png" class="who1">
+				<img src="../images/philosopher_hover_01.png" class="whover" id="whoHover01">
+			</div>
+			<div class="who_img">
+				<img src="../images/philosopher_02.png" class="who2">
+				<img src="../images/philosopher_hover_02.png" class="whover" id="whoHover02">
+			</div>
+			<div class="who_img">
+				<img src="../images/philosopher_03.png" class="who3">
+				<img src="../images/philosopher_hover_03.png" class="whover" id="whoHover03">
+			</div>
+		</div>
+
+		<div class="modalPopup_01">
+			<img src="../images/who_modal_01.png" class="modal01">
+			<span class="close"></span>
+		</div>
+		<div class="modalPopup_02">
+			<img src="../images/who_modal_02.png" class="modal02">
+			<span class="close"></span>
+		</div>
+		<div class="modalPopup_03">
+			<img src="../images/who_modal_03.png" class="modal03">
+			<span class="close"></span>
+		</div> <img src="../images/ico_next.png" class="next">
+	</div>
+
+	<div id="history_wrap">
+		<img src="../images/history_paper.png" class="paper">
+		<div class="history_inner">
+			<div class="time">고대</div>
+			<span>
+				<img src="../images/history_01.png" class="hist">
+			</span>
+			<div class="time">중세</div>
+			<span>
+				<img src="../images/history_02.png" class="hist">
+			</span>
+			<div class="time">근대</div>
+			<span>
+				<img src="../images/history_03.png" class="hist">
+			</span>
+			<div class="time">현대</div>
+			<span>
+				<img src="../images/history_04.png" class="hist">
+			</span>
+
+			<img src="../images/ico_next.png" class="hist_next">
+		</div>
+	</div>
+
+	<div id="sayed_wrap">
+		<div class="sayed_inner">
+			<div class="bigAccor">
+				<button class="accordion">" 악법도 법이다 "</button> 
+				<div class="panel">
+				  	<p>소크라테스가 독배를 마시기 전 했다고 알려진 말이지만 이는 와전된 사실입니다.<br />
+					이 말은 고대 로마의 법률 격언인 ‘법은 엄하지만 그래도 법’이라는 말에서 나온 것입니다.<br />
+					소크라테스가 악법도 법이라고 그대로 말하지는 않았지만 비슷한 의미의 말을 남긴 것은<br />
+					맞습니다. 일본의 법철학자 오다카 도모오가 1930년대에 출판한 <법철학(法哲學)>에서<br />
+					실정법주의를 주장하면서 “소크라테스가 독배를 든 것은 실정법을 존중했기 때문이며,<br />
+					‘악법도 법’이므로 이를 지켜야 한다”라고 쓴 내용이 마치 소크라테스가 한 말처럼 와전된 것입니다.
+					</p> <img src="../images/sayed_01.png" class="say1">
+				</div>
+			</div>
+			<div class="bigAccor">
+				<button class="accordion">" 인간은 사회적 동물이다 "</button>
+				<div class="panel">
+				  	<p>아리스토텔레스의 명언으로 알려져 있는 말입니다. 사실 그는 이러한 말을 남긴 적이 없습니다.<br />
+					그 시대에는 ‘사회적’이라는 말조차 존재하지 않았습니다. 왜 우리는 잘못 알고 있는 것일까요?<br />
+					아리스토텔레스는 인간이 공존하며 살기 때문에 인간인 것이 아니라, 공통의 과제로 논쟁하고,<br />
+					토론하며 논의하는 ‘정치적인 삶’을 통해서만 인간이 될 수 있다고 보았기 때문에 ‘인간은<br />
+					정치적 동물이다’라고 말했습니다. 그런데 로마의 철학자 세네카가 희랍어로 된 이 말을<br />
+					라틴어로 번역하며 ‘정치적 동물’을 ‘사회적 동물’로 바꾼 것입니다.
+					</p> <img src="../images/sayed_02.png" class="say2">
+				</div>
+			</div>
+			<div class="bigAccor">
+				<button class="accordion">" 나는 생각한다, 고로 존재한다 "</button>
+				<div class="panel">
+				  	<p>철학자 데카르트를 모르는 사람들도 이 말은 한 번쯤 들어봤을 것입니다. 어느 날<br />
+					데카르트는 의문을 갖게 되었습니다. 내가 꿈을 꾸고 있는 것은 아닌가?’ ‘지금 살고<br />
+					있는 세계가 실재하는 세계인가?’ 그는 아무리 고심해도 이러한 의문에 반박할 방법을<br />
+					찾지 못 하고 감각이 주는 정보는 믿을 수 없다고 생각했습니다. 그렇게 도달한 결론은<br />
+					‘내가 의심하고 있는 것은 자명하다.’라는 것이었습니다. 의심한다는 것은 생각의<br />
+					일종이고 내가 존재하지 않으면 생각할 수도 없기 때문에 “나는 생각한다.<br />
+					고로 존재한다”라는 말을 했던 것입니다.
+					</p> <img src="../images/sayed_03.png" class="say3">
+				</div>
+			</div>
+			<div class="bigAccor">
+				<button class="accordion">" 배부른 돼지가 되느니 배고픈 소크라테스가 낫다 "</button>
+				<div class="panel">
+				  	<p>근대 철학자 존 스튜어트 밀이 남긴 말입니다. 본래 "배부른 돼지가 되기보다는 배고픈<br />
+					인간이 되는 것이 낫고, 만족스러운 바보가 되기보다는 불만족스러운 소크라테스가<br />
+					되는 것이 낫다."라고 한 말을 줄여 전해진 것입니다. 자본주의가 발달하던 영국에서<br />
+					개인의 이익과 사회 전체의 이익을 조화시키려 한 것이 공리주의입니다. 모든 쾌락이<br />
+					질적으로 동일하다고 주장한 벤담과 달리 밀은 쾌락에도 질적 차이가 있다고 주장했습니다.<br />
+					인간이라면 누구나 감각적인 쾌락보다 정신적인, 고상한 쾌락을 원할 것이라 생각한 것이죠.<br />
+					그렇기 때문에 쾌락의 질적 차이를 수용하지 않는 양적 공리주의를 비판하며 이러한 말을 남긴 것입니다.
+					</p> <img src="../images/sayed_04.png" class="say4">
+				</div>
+			</div>
+			<div class="bigAccor">
+				<button class="accordion">" 내일 지구가 멸망하더라도 나는 한 그루의 사과나무를 심겠다 "</button>
+				<div class="panel">
+				  	<p>스피노자의 명언으로 알려져 있으며 수많은 패러디를 낳기도 한 말입니다. 그런데 놀라운<br />
+					것은 이 또한 스피노자 본인이 한 말이 아니라는 사실입니다. 유독 한국에서만 스피노자의<br />
+					말로 각인되어 있고 유럽에서는 대부분 종교개혁을 일으킨 마르틴 루터가 했던 말로 알고<br />
+					있다고 합니다. 독일 아이제나흐 루터 하우스의 비석에 이 문구와 함께 마르틴 루터의<br />
+					이름이 박혀 있다고 합니다. 이 말에는 내가 무엇을 해도 지구가 멸망하는 것은 변치<br />
+					않으니 필연을 받아들여야 한다는 철학적 의미가 담겨있는데, 이는 스피노자의 운명론과<br />
+					일치하는 주장입니다.
+					</p> <img src="../images/sayed_05.png" class="say5">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
